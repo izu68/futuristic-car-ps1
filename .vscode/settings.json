@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.pl": "prolog",
+        "global.h": "c",
+        "types.h": "c",
+        "stdio.h": "c",
+        "libgpu.h": "c",
+        "libgte.h": "c",
+        "display.h": "c"
+    }
+}
