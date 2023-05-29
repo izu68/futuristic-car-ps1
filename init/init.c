@@ -1,9 +1,13 @@
 #include "init.h"
 #include "../global/global.h"
+#include <libcd.h>
 
 void init (void) {
     // Reset GPU and enable interrupts
     ResetGraph (0);
+
+    // Init CD
+    CdInit ();
     
     // Configures the pair of DISPENVs and DRAWENVs for 320x240 mode (NTSC)
     SetDefDispEnv (&disp[0], 0, 0,   320, 240);

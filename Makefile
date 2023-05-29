@@ -1,8 +1,8 @@
 
-TARGET = executable
-TYPE = exe
+TARGET = exec
+TYPE = ps-exe
 
-SRCS = third_party/nugget/common/crt0/crt0.s main.c global/global.c init/init.c renderer/display.c renderer/objects.c resources/my_res.s
+SRCS = third_party/nugget/common/crt0/crt0.s main.c global/global.c init/init.c renderer/display.c renderer/objects.c 
 
 CPPFLAGS += -Ithird_party/psyq-iwyu/include
 LDFLAGS += -Lthird_party/psyq/lib
@@ -32,3 +32,6 @@ LDFLAGS += -ltap
 LDFLAGS += -Wl,--end-group
 
 include third_party/nugget/common.mk
+
+buildcd:
+	bin\mkpsxiso.exe cd\cd.xml

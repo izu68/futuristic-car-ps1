@@ -18,7 +18,7 @@ typedef struct {
     TIM_IMAGE tim_param;
 
     SPRT *spr;
-    u_long resource;
+    u_int resource;
     int x, y, w, h;
     u_char r, g, b;
 } obj_sprite;

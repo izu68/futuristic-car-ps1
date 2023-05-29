@@ -9,7 +9,7 @@
       "remote": true,
       "cwd": "${workspaceRoot}",
       "valuesFormatting": "parseText",
-      "executable": "${workspaceRoot}/${workspaceRootFolderName}.elf",
+      "executable": "${workspaceRoot}/exec.elf",
       "stopAtConnect": true,
       "gdbpath": "gdb-multiarch",
       "windows": {
@@ -20,7 +20,7 @@
       },
       "autorun": [
         "monitor reset shellhalt",
-        "load ${workspaceRootFolderName}.elf",
+        "load exec.elf",
         "tbreak main",
         "continue"
       ]

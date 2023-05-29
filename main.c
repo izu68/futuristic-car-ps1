@@ -7,18 +7,16 @@
 
 int main () {
     init ();
-    obj_tile newtile;
     
-    extern u_long tim_player_car[];
     obj_sprite player_car;
 
+    loadobj_sprite (&player_car, "\\textures\\Pcar.tim;1");
     
-    
-    while(1) {
-        FntPrint("HELLO WORLD!");
+    while(1) {  
         ClearOTagR(ot[db], OTLEN);  // Clear ordering table
+        FntPrint("HELLO WORLD!");
 
-        drawobj_sprite (&player_car, 32, 32, 64, 64);
+        drawobj_sprite (&player_car, 0, 0, 64, 64);
 
         update_display ();
     }
