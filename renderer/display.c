@@ -2,17 +2,17 @@
 #include "../global/global.h"
 
 void update_display (void) {
-    // Wait for GPU to finish drawing and V-Blank
-    DrawSync (0);
-    VSync (0);
+    DrawSync (0);                // Wait for any graphics processing to finish
     
-    // Flip buffer counter
-    db = !db;
-    
-    // Apply environments
-    PutDispEnv (&disp[db]);
+    VSync (0);                   // Wait for vertical retrace
+
+    PutDispEnv (&disp[db]);      // Apply the DISPENV/DRAWENVs
     PutDrawEnv (&draw[db]);
+
+    SetDispMask (1);             // Enable the display
+
+    DrawOTag (ot[db]+OTLEN-1);   // Draw the ordering table
     
-    // Enable display
-    SetDispMask (1);
+    db = !db;                    // Swap buffers on every pass (alternates between 1 and 0)
+    nextpri = pribuff[db];       // Reset next primitive pointer
 }

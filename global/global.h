@@ -2,12 +2,19 @@
 #define __GLOBAL_H_
 
 #include <sys/types.h>
-#include <libetc.h>	// Includes some functions that controls the display
-#include <libgte.h>	// GTE header, not really used but libgpu.h depends on it
-#include <libgpu.h>	// GPU library header
+#include <libetc.h>
+#include <libgte.h>
+#include <libgpu.h>
+
+#define OTLEN 8
 
 extern DISPENV disp[2];
 extern DRAWENV draw[2];
 extern int db;
+
+extern DR_TPAGE *tpage;
+extern u_long ot[2][OTLEN];    // Ordering table length
+extern char pribuff[2][32768]; // Primitive buffer
+extern char *nextpri;          // Next primitive pointer
 
 #endif

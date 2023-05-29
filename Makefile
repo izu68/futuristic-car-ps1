@@ -1,8 +1,8 @@
 
-TARGET = futuristic-car
-TYPE = ps-exe
+TARGET = executable
+TYPE = exe
 
-SRCS = third_party/nugget/common/crt0/crt0.s main.c global/global.c init/init.c renderer/display.c
+SRCS = third_party/nugget/common/crt0/crt0.s main.c global/global.c init/init.c renderer/display.c renderer/objects.c resources/my_res.s
 
 CPPFLAGS += -Ithird_party/psyq-iwyu/include
 LDFLAGS += -Lthird_party/psyq/lib

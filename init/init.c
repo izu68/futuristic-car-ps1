@@ -6,10 +6,10 @@ void init (void) {
     ResetGraph (0);
     
     // Configures the pair of DISPENVs and DRAWENVs for 320x240 mode (NTSC)
-    SetDefDispEnv (&disp[0], 0, 0, 640, 480);
-    SetDefDispEnv (&disp[1], 0, 0, 640, 480);
-    SetDefDrawEnv (&draw[0], 0, 0, 640, 480);
-    SetDefDrawEnv (&draw[1], 0, 0, 640, 480);
+    SetDefDispEnv (&disp[0], 0, 0,   320, 240);
+    SetDefDispEnv (&disp[1], 0, 240, 320, 240);
+    SetDefDrawEnv (&draw[0], 0, 240, 320, 240);
+    SetDefDrawEnv (&draw[1], 0, 0,   320, 240);
     
     // Specifies the clear color of the DRAWENV
     setRGB0 (&draw[0], 0, 0, 0);
@@ -30,4 +30,6 @@ void init (void) {
     FntLoad (960, 0);
     // Create the text stream
     FntOpen (0, 8, 320, 224, 0, 100);
+
+    nextpri = pribuff[0];           // Set initial primitive pointer address
 }
